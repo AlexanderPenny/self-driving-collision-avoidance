@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* The grey background for the page */
+  body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* Ensures the stack-wrapper behaves correctly */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;      /* Allow the page to grow taller than the screen */
+    margin: 0;
+    padding: 40px 0;        /* Adds space at the very top and bottom of the page */
+  }
+
+  /* The white padded box which I am working in */
+  .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1500px;
+    width: 90%;
+  }
+
+  h1 {
+    color: #333;
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  .button-group {
+    margin-top: 20px;
+  }
+  .step {
+    margin-bottom: 25px;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+    background-color: #2c3e50; /* Dark Blue-Grey */
+    color: white;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+  strong {
+    color: #333;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .control-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+  }
+  .control-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    color: #333;
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<body>
+  <div class="stack-wrapper">
+    
+    <div class="container">
+  <h1>Read Me</h1>
+        <h3>Prerequisites</h3>
+        <p>Please ensure you have the following installed before proceeding:</p>
+        <ul>
+            <li>Windows 10 or 11 (64-bit)</li>
+            <li>At least 8 GB of RAM</li>
+            <li>At least 11 GB, strongly preferably more, of available disk space</li>
+            <li>Graphics card with CUDA support (for GPU acceleration) (suggested, not tested without)</li>
+            <li>Virtualisation-enabled PC, so that a Linux VM can be run</li>
+            <li>Reasonably up-to-date Graphics Drivers, if prompted to update graphics drivers, do so.</li>
+            <li>Read over the <code>readme.html</code> before proceeding to step 1.</li>
+            <li>Have signed the below <code>Participant Information Sheet and Consent Form</code>.</li>
+        </ul>
+        <p style="font-size: 0.85em; margin-top: 10px; color: #666;">
+        * <strong>Note:</strong> If you are asked to give network access or some other permissions, and you say no, you may need to manually allow permission, as the virtual machine, for example, in a certain way, is somewhat counted as a seperate device.
+        <br>* <strong>Note:</strong> If prompted to update graphics drivers, and the artefact does not work, this is likely due to outdated drivers. Update your drivers as appropriate.
+      </p>
+        <h3>Ethical & Consent Documentation</h3>
+        <p>Before using this project, please review the following ethical and consent documentation:</p>
+        <ul>
+            <div class="button-group">
+    <a href="EthicsDocuments/EMS11055.pdf" target="_blank" class="btn doc-btn">Ethical Approval</a>
+    <a href="EthicsDocuments/Participant Debrief Form.pdf" target="_blank" class="btn doc-btn">Participant Debrief Form</a>
+    <a href="EthicsDocuments/Participant Information Sheet and Consent Form.docx" target="_blank" class="btn doc-btn">Participant Information Sheet and Consent Form</a>
+              <p>The aforementioned "Participant Information Sheet and Consent Form" is a document that will be 
+                necessary to complete before proceeding further, and keeping this document on hand to submit in the survey.</p>
+  </div>
+        </ul>
+        <p>Do not proceed with this project if you are uncomfortable.<br>Although unlikely, do not proceed if proceeding could cause harm.</p>
+  <h3>Getting Started</h3>
+  <p>To begin the simulation, follow these steps in order:</p>
+  <p>In the root folder that you have been given, these files will be located:</p>
+  <div class="button-group">
+    <div class="step">
+      <p>Preferably extract this somewhere that has no spaces in the filepath.</p>
+    <strong>1. Install Prerequisites</strong><br>
+    <div class="file-label">Run: <code>InstallEnvironment.bat</code></div>
+    <p style="font-size: 0.85em; margin-top: 10px; color: #666;">
+    * <strong>Note:</strong> You will be required to run this three times in total, as following the below instructions.</p>
+    <p>Follow the steps that the terminal window prompts you to, including restarting your computer if prompted.<br>When you do, you will 
+      need to run the <code>InstallEnvironment.bat</code> file again.</p>
+    <p>At one point an Ubuntu terminal will open, you will need to set a login password, return to the <code>InstallEnvironment.bat</code> file afterwards.</p>
+  </div>
+
+  <div class="step">
+    <strong>2. Launch Server</strong><br>
+    <div class="file-label">Run: <code>StartServer.bat</code></div>
+    <p>You may minimise this window. (The Unreal Engine 5 window)</p>
+  </div>
+  <div class="step">
+    <strong>3. Launch Client</strong><br>
+    <div class="file-label">Run: <code>StartClient.bat</code></div>
+    <p>Note, that you will be asked in the survey to provide:</p>
+    <ul>
+      <li>How many times was a collision avoided?</li>
+      <li>How many collisions were there?</li>
+      <li>How many near collisions were there?</li>
+      </ul>
+  </div>
+  <div class="step">
+    <strong>4. Adjust the Camera and Turn on the Lights</strong><br>
+    <p>First, press tab, once the simulation is running on the clientside in the pygame Ubuntu instance. This may take a while for it to start running first time around.
+      <br>
+      Then, at the same time, press "Shift+L" (key combo) to turn on the high beam lights necessary to see the road in this night-time environment.
+      <br><br>
+      You should now be in the correct camera view to drive the car, if you are not, you can press <strong>TAB</strong> a few more times to cycle back through the different camera views until you find the one that shows the car from the dashboard perspective.</p>
+    
+  </div>
+  <div class="step">
+    <strong>5. Drive the Car</strong><br>
+    <div class="step">
+  <h7>Vehicle Controls</h7>
+  <p>Once the simulation is active, use the following keys to interact with the vehicle:</p>
+  <div class="control-grid">
+    <div class="control-item"><kbd>W</kbd> Accelerate</div>
+    <div class="control-item"><kbd>S</kbd> Brake</div>
+    <div class="control-item"><kbd>A</kbd> <kbd>D</kbd> Steering</div>
+    <div class="control-item"><kbd>Shift</kbd> + <kbd>L</kbd> High Beams</div>
+    <div class="control-item"><kbd>1</kbd> Fix Non-RGB Camera</div>
+    <div class="control-item"><kbd>Y</kbd> Toggle Auto/Manual</div>
+  </div>
+  <p>Do not press <kbd>Y</kbd> during the use of the program to manually take away control from the internventionary AI.</p>
+  <p style="font-size: 0.85em; margin-top: 10px; color: #666;">
+    * <strong>Note:</strong> <kbd>Y</kbd> swaps between automatic traditional pathfinding (waypoint mode) and full manual control.
+  </p>
+</div>
+  </div>
+  <div class="step">
+    <strong>6. Fill out the survey</strong><br>
+    <div class="button-group">
+    <a href="https://forms.office.com/e/8wE1b4LWac" target="_blank" class="btn doc-btn">Fill Out Survey</a>
+    <br>
+    <p>To get the stats required for filling out the survey, run <code>cmpfourhundred_log_reader.py</code> and type in the data as displayed by the log reader.</p>
+    </div>
+  </div>
+  <div class="step">
+    <strong>7. Uninstall Requisites</strong><br>
+    <div class="file-label">Run: <code>UninstallEnvironment.bat</code></div>
+    <p>Note that you this should take effect after restarting your computer. Otherwise, you may need to manually remove WSL2 and any other associated software used in this research as required or wanted.</p>
+  </div>
+  </div>
+
+  
+</div>
+</div>
+
+    <div style="height: 20px;"></div>
+
+    <div class="container">
+      <h3>Additional Information</h3>
+      <p>
+        <a href="https://alexanderpenny.github.io/HonoursProject.html">Honours Project Portfolio Page</a><br><br>
+        Alexander Penny's Honours Project at the University of Abertay, 2026<br><br>
+        <strong>Academic Integrity Notice:</strong> This README.html page was partially generated by an AI language model 
+        to provide a visually appealing html readme page to the project. The content was reviewed and edited by the author. 
+        The use of AI in this context is intended to enhance the presentation of information and not to pass off this page as entirely my own.
+      </p>
+    </div>
+
+  </div>
+</body>
+
+</body>
+</html>
