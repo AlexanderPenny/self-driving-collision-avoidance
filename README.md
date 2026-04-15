@@ -8,3 +8,5 @@ The cmpfourhundred_manual_control.py is based off of "manual_control.py" given i
 Everything pertaining to the actual RL takes place in manual_control and RL_2ndtry (which is named this since it was the 2ndtry file, which ended up keeping its name).
 
 The instructions on how to run this program are included in the readme.html
+
+# Download the release for a working project
