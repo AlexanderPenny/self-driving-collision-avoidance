@@ -28,7 +28,6 @@ from threading import RLock, Thread, Lock
 import cmpfourhundred_logger as cmp_log  # structured session logger
 from tqdm import tqdm
 
-# Ensure reproducibility
 random.seed(1)
 np.random.seed(1)
 tf.random.set_seed(1)
@@ -47,7 +46,8 @@ MODEL_NAME = "Model_"
 MEMORY_FRACTION = 0.4
 MIN_REWARD = -200
 
-SECONDS_PER_EPISODE = 20
+#episodes arent really in use
+SECONDS_PER_EPISODE = 20 
 EPISODES = 2000
 
 DISCOUNT = 0.99
@@ -57,7 +57,7 @@ MIN_EPSILON = 0.001
 
 AGGREGATE_STATS_EVERY = 10
 
-STUCK_TIMER_INCREMENT = 0.05 # Increment the stuck timer by the simulation tick rate each step we're below the speed
+STUCK_TIMER_INCREMENT = 0.05 # Increment the stuck timer by the simulation tick rate each step the vehicle is below the speed
 STUCK_TIMER_THRESHOLD = 5.0 # seconds of being stuck before teleporting
 
 # --------------------
@@ -154,7 +154,7 @@ class CarEnv:
         self.actor_list.append(self.colsensor)
         self.colsensor.listen(lambda event: self.collision_data(event))
 
-        # --- FIX: Deadlock in Reset ---
+        # --- Deadlock in Reset ---
         # In synchronous mode, we must tick the world to get initial sensor data
         self.vehicle.apply_control(carla.VehicleControl(throttle=0.0, brake=0.0))
         self.world.tick()
@@ -182,15 +182,12 @@ class CarEnv:
     def obstacle_data(self, event):
         self.obstacle_distance = event.distance
 
-    # Inside CarEnv in cmpfourhundred_RL_2ndtry.py
     def preprocess(self, image_input):
-        # --- FIX: Handle raw CARLA images vs processed numpy arrays ---
+        # --- Handle raw CARLA images vs processed numpy arrays ---
         if hasattr(image_input, 'raw_data'):
-            # It's a raw carla.Image object
             array = np.frombuffer(image_input.raw_data, dtype=np.uint8)
             array = np.reshape(array, (image_input.height, image_input.width, 4))
         elif isinstance(image_input, np.ndarray):
-            # It's already a numpy array (e.g., from a previous stack)
             array = image_input
         else:
             raise ValueError("Unknown image format")
@@ -292,7 +289,7 @@ class CarEnv:
     def step(self, action, apply_control=True):
         self.world.tick()
         
-        # INITIALIZE MISSING ATTRIBUTES (Fixes AttributeError)
+        # INITIALIZE MISSING ATTRIBUTES
         if not hasattr(self, 'last_action'): self.last_action = 1
         if not hasattr(self, 'stuck_timer'): self.stuck_timer = 0.0
         if not hasattr(self, 'path_index'): self.path_index = 0
@@ -521,7 +518,7 @@ class DQNAgent:
 
         minibatch = random.sample(self.replay_memory, MINIBATCH_SIZE)
 
-        # --- FIX: Validate Replay Memory Shapes ---
+        # --- Validate Replay Memory Shapes ---
         valid_minibatch = []
         expected_shape = (IM_HEIGHT, IM_WIDTH, 4)
         for sample in minibatch:

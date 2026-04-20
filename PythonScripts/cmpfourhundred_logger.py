@@ -1,6 +1,6 @@
 """
 Log format:
-    TIMESTAMP|EVENT_TYPE|DETAIL
+    TIMESTAMP, EVENT_TYPE, DETAIL
 
 Event types:
     SESSION_START       simulation launched

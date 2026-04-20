@@ -28,7 +28,7 @@ wsl -d Ubuntu -u root bash -c "mkdir -p /home/%WSL_USER%/carlaCache/0.10.0 && mk
 :: -Navigate to the project folder
 :: -activate the tf_gpu environment
 :: -Run the Python script
-:: -Keep the terminal open with 'exec bash' 
+:: - Keep the terminal open with 'exec bash' 
 :: throws away the output of print
 start /high wsl -d Ubuntu bash -c "cd \"%WSL_PATH%\" && source ~/tf_gpu/bin/activate && python3 %PYTHON_SCRIPT% --host %HOST_IP%; exec bash"
 exit

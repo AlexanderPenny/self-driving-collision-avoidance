@@ -78,7 +78,7 @@ class CollisionCauser:
         # Use a predefined list of reliable props
         bp = self.blueprint_library.find(random.choice(RELIABLE_PROPS))
 
-        #Get vehicle transform
+        # Get vehicle transform
         v_trans = self.vehicle.get_transform()
         v_fwd = v_trans.get_forward_vector()
 
@@ -95,7 +95,7 @@ class CollisionCauser:
             self.spawned_obstacles.append(obstacle)
 
     def cleanup_passed_obstacles(self):
-        # Deletes objects once the car has driven past them
+        """Deletes objects once the car has driven past them"""
         if not self.vehicle: return
 
         v_loc = self.vehicle.get_location()
@@ -106,7 +106,7 @@ class CollisionCauser:
                 self.spawned_obstacles.remove(obs)
                 continue
 
-            # Vector is from obstacle to car
+            # Vector from obstacle to car
             vec_to_car = v_loc - obs.get_location()
             
             # DOT PRODUCT: If positive, the car is 'beyond' the object in the direction it's facing
@@ -125,7 +125,7 @@ class CollisionCauser:
         print("Collision Causer active. Waiting for hero vehicle...")
         try:
             while True:
-                # Checking for cleanup
+                # Check for cleanup
                 self.cleanup_passed_obstacles()
                 
                 time.sleep(SLEEP_TIME) # To not overwhelm the CPU
