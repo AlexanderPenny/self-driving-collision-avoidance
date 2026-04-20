@@ -11,4 +11,4 @@ The instructions on how to run this program are included in the readme.html
 
 # Download the release for a working project
 This is due to some files being too big to host on github
-https://drive.google.com/file/d/16fxnYaJZu-tln1AqAhdWgeaSvxJb02B7/view?usp=drive_link
+[Release Download Link](https://drive.google.com/file/d/1zP6oQjgh3uCDOoJi6YKLKfDTqwNMp5MC/view?usp=sharing)
