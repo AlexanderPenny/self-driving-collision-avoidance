@@ -1,3 +1,9 @@
+:: --------------------------
+:: Copyright (c) 2026 Alexander L. Penny
+:: Licensed under the MIT License - see LICENSE file for details
+:: Project Link - https://github.com/AlexanderPenny/self-driving-collision-avoidance
+:: --------------------------
+
 @echo off
 set "MY_DIR=%~dp0"
 if "%MY_DIR:~-1%"=="\" set "MY_DIR=%MY_DIR:~0,-1%"
