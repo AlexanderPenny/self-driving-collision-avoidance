@@ -15,4 +15,4 @@ This is due to some files being too big to host on github
 [Release Download Link](https://drive.google.com/file/d/1zP6oQjgh3uCDOoJi6YKLKfDTqwNMp5MC/view?usp=sharing)
 # License
 
-Licensing for this repository is unknown. This work was developed as part of an Abertay University research project, and reuse, redistribution, or modification permissions have not been established. Until an explicit license is added, no license is granted beyond the permissions provided by GitHub's Terms of Service.
+Licensing for this repository is unknown. This work was developed as part of an Abertay University honours project, completed in 2026.
