@@ -1,0 +1,18 @@
+*Beware that installing this can leave a little Linux penguin in your Windows File Explorer that is hard to get rid of.*
+# Self Driving Collision Avoidance Project for CMP400 at Abertay University
+
+# Note if you wish to start a new model to train using this
+This project uses a default model when running this, and is ordinarily configured to use this model to train. If you wish to train a new model, uncomment-out lines 1458 to 1463 in "cmpfourhundred_manual_control.py" & on line 149, changed "LOADING_MODEL" to "False" to create a new model.
+
+# Parts of note
+The cmpfourhundred_manual_control.py is based off of "[manual_control.py](https://github.com/carla-simulator/carla/blob/ue5-dev/PythonAPI/examples/manual_control.py)" given in the examples folder of a CARLA distribution for version 0.10.0. The other python files in attatched to the repo have been built from the ground up.
+Everything pertaining to the actual RL takes place in manual_control and RL_2ndtry (which is named this since it was the 2ndtry file, which ended up keeping its name).
+
+The instructions on how to run this program are included in the readme.html
+
+# Download the release for a working project
+This is due to some files being too big to host on github
+[Release Download Link](https://drive.google.com/file/d/1zP6oQjgh3uCDOoJi6YKLKfDTqwNMp5MC/view?usp=sharing)
+# License
+
+Licensing for this repository is unknown. This work was developed as part of an Abertay University research project, and reuse, redistribution, or modification permissions have not been established. Until an explicit license is added, no license is granted beyond the permissions provided by GitHub's Terms of Service.
