@@ -6,7 +6,7 @@ Created during BSc (Hons) Computer Game Applications Development
 This project uses a default model when running this, and is ordinarily configured to use this model to train. If you wish to train a new model, uncomment-out lines 1458 to 1463 in "cmpfourhundred_manual_control.py" & on line 149, changed "LOADING_MODEL" to "False" to create a new model.
 
 # Parts of note
-The cmpfourhundred_manual_control.py is based off of "[manual_control.py](https://github.com/carla-simulator/carla/blob/ue5-dev/PythonAPI/examples/manual_control.py)" given in the examples folder of a CARLA distribution for version 0.10.0. The other python files in attatched to the repo have been built from the ground up.
+The cmpfourhundred_manual_control.py is based off of "[manual_control.py](https://github.com/carla-simulator/carla/blob/ue5-dev/PythonAPI/examples/manual_control.py)" given in the examples folder of a [CARLA](https://github.com/carla-simulator/carla) distribution for version 0.10.0. The other python files in attatched to the repo have been built from the ground up.
 Everything pertaining to the actual RL takes place in manual_control and RL_2ndtry (which is named this since it was the 2ndtry file, which ended up keeping its name).
 
 The instructions on how to run this program are included in the readme.html
