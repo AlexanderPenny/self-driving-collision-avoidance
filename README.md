@@ -12,8 +12,9 @@ Everything pertaining to the actual RL takes place in manual_control and RL_2ndt
 The instructions on how to run this program are included in the readme.html
 
 # Download the release for a working project
+There is only a windows release available.
 This is due to some files being too big to host on github
-[Release Download Link](https://drive.google.com/file/d/1zP6oQjgh3uCDOoJi6YKLKfDTqwNMp5MC/view?usp=sharing)
+[Release Download Link - Windows Release](https://drive.google.com/file/d/1zP6oQjgh3uCDOoJi6YKLKfDTqwNMp5MC/view?usp=sharing)
 # License
 
 Licensing for this repository is unknown. This work was developed as part of an Abertay University honours project, completed in 2026.
