@@ -1,3 +1,5 @@
+# Alexander L. Penny - Abertay University 2026 Honours Project - BSc (Hons) Computer Game Applications Development
+#
 # Copyright (c) 2025 Computer Vision Center (CVC) at the Universitat Autonoma de
 # Barcelona (UAB).
 #

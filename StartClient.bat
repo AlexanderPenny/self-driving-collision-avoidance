@@ -1,4 +1,5 @@
 :: --------------------------
+:: Alexander L. Penny - Abertay University 2026 Honours Project - BSc (Hons) Computer Game Applications Development
 :: --------------------------
 
 @echo off
